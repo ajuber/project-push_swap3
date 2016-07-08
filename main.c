@@ -77,17 +77,22 @@ int				ft_check_doublon(t_e *e)
 
 void			main_next(t_e *e)
 {
+	e->l_str = ft_create_racine_str();
 	if (!(push_swap_calc(e)))
 	{
 		ft_putendl_fd("Error", 2);
 		ft_free_list_cir(e->l_a);
 		ft_free_list_cir(e->l_b);
+		ft_free_list_str(e->l_str);
 		return ;
 	}
+	check_del(e->l_str);
 	if (e->v)
 		ft_putendl("Operation effectue");
+	display_result(e->l_str);
 	ft_free_list_cir(e->l_a);
 	ft_free_list_cir(e->l_b);
+	ft_free_list_str(e->l_str);
 }
 
 int				main(int argc, char **argv)

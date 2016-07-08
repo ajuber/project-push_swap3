@@ -20,7 +20,8 @@ void	rot_to_min(t_e *e)
 		{
 			e->rot--;
 			ra(e);
-			ft_putendl("ra");
+			//ft_putendl("ra");
+			push_back_str(e->l_str, "ra");
 			if_display(e, 1);
 		}
 	}
@@ -30,7 +31,8 @@ void	rot_to_min(t_e *e)
 		{
 			e->rev_rot--;
 			rra(e);
-			ft_putendl("rra");
+		//	ft_putendl("rra");
+			push_back_str(e->l_str, "rra");
 			if_display(e, 1);
 		}
 	}
@@ -87,13 +89,13 @@ t_list_cir	*search_merge_pivot_rev(t_e *e, int med, int min)
 {
 	t_list_cir	*tmp;
 	t_list_cir	*tmp_merge;
-	t_list_cir	*tmp_med;
+//	t_list_cir	*tmp_med;
 	//t_list_cir	*tmp_min;
 
 	tmp = e->l_a->next;
 	while (tmp != e->l_a && (tmp->n < med || tmp->n > med))
 		tmp = tmp->next;
-	tmp_med = tmp;
+//	tmp_med = tmp;
 	while ((tmp->n <= med && tmp->n >= min) || tmp == e->l_a->next)
 		tmp = tmp->previous;
 	tmp = tmp->next;
@@ -105,13 +107,13 @@ t_list_cir	*search_merge_pivot(t_e *e, int med)
 {
 	t_list_cir	*tmp;
 	t_list_cir	*tmp_merge;
-	t_list_cir	*tmp_med;
+//	t_list_cir	*tmp_med;
 	//t_list_cir	*tmp_min;
 
 	tmp = e->l_a->next;
 	while (tmp != e->l_a && (tmp->n < med || tmp->n > med))
 		tmp = tmp->next;
-	tmp_med = tmp;
+//	tmp_med = tmp;
 	while (tmp->n <= med || tmp == e->l_a->next)
 		tmp = tmp->next;
 	tmp_merge = tmp;
@@ -162,7 +164,7 @@ void	resolv_rev(t_e *e, int *tab, int case_med, int case_min)
 	t_list_cir	*tmp;
 	int			i;
 	t_list_cir	*tmp_merge;
-	int static	test = 1;
+	static int	test = 1;
 
 	med = tab[case_med];
 	min = tab[case_min];
@@ -178,7 +180,8 @@ void	resolv_rev(t_e *e, int *tab, int case_med, int case_min)
 			{
 				search_med(e, tmp->n);
 				pb(e);
-				ft_putendl("pb");
+		//		ft_putendl("pb");
+				push_back_str(e->l_str, "pb");
 				tmp = e->l_a;
 				if_display(e, 1);
 				e->size_l--;
@@ -188,7 +191,8 @@ void	resolv_rev(t_e *e, int *tab, int case_med, int case_min)
 		}
 		search_med(e, med);
 		pb(e);
-		ft_putendl("pb");
+	//	ft_putendl("pb");
+		push_back_str(e->l_str, "pb");
 		if_display(e, 1);
 		e->size_l--;
 		search_med(e, tmp_merge->n);
@@ -196,7 +200,8 @@ void	resolv_rev(t_e *e, int *tab, int case_med, int case_min)
 		while (tmp != e->l_b)
 		{
 			pa(e);
-			ft_putendl("pa");
+	//		ft_putendl("pa");
+			push_back_str(e->l_str, "pa");
 			tmp = e->l_b->next;
 			if_display(e, 1);
 			e->size_l++;
@@ -219,7 +224,7 @@ void	resolv(t_e *e, int *tab, int case_med, int case_min)
 	t_list_cir	*tmp;
 	int			i;
 	t_list_cir	*tmp_merge;
-	int static	test = 1;
+	static int	test = 1;
 
 	med = tab[case_med];
 	min = tab[case_min];
@@ -235,7 +240,8 @@ void	resolv(t_e *e, int *tab, int case_med, int case_min)
 			{
 				search_med(e, tmp->n);
 				pb(e);
-				ft_putendl("pb");
+		//		ft_putendl("pb");
+				push_back_str(e->l_str, "pb");
 				tmp = e->l_a;
 				if_display(e, 1);
 				e->size_l--;
@@ -245,7 +251,8 @@ void	resolv(t_e *e, int *tab, int case_med, int case_min)
 		}
 		search_med(e, med);
 		pb(e);
-		ft_putendl("pb");
+//		ft_putendl("pb");
+		push_back_str(e->l_str, "pb");
 		if_display(e, 1);
 		e->size_l--;
 		search_med(e, tmp_merge->n);
@@ -253,7 +260,8 @@ void	resolv(t_e *e, int *tab, int case_med, int case_min)
 		while (tmp != e->l_b)
 		{
 			pa(e);
-			ft_putendl("pa");
+		//	ft_putendl("pa");
+			push_back_str(e->l_str, "pa");
 			tmp = e->l_b->next;
 			if_display(e, 1);
 			e->size_l++;

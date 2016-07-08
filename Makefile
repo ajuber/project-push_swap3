@@ -31,7 +31,11 @@ SRC_C1=	main.c\
 		test_swap_a.c\
 		tri_small_list.c\
 		tri_aa.c\
-		what_ratation.c
+		what_ratation.c\
+		list_str.c\
+		check_del.c\
+		display_result.c\
+		
 
 SRC_C2=	main_checker.c
 

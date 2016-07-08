@@ -22,6 +22,13 @@ typedef struct			s_list_cir
 	struct s_list_cir	*next;
 }						t_list_cir;
 
+typedef	struct			s_list_str
+{
+	char				*str;
+	struct s_list_str	*next;
+	struct s_list_str	*previous;
+}						t_list_str;
+
 typedef struct			s_e
 {
 	t_list_cir			*l_a;
@@ -34,6 +41,7 @@ typedef struct			s_e
 	long				nb;
 	int					rot;
 	int					rev_rot;
+	t_list_str			*l_str;
 }						t_e;
 
 t_list_cir				*ft_create_racine(void);
@@ -69,5 +77,12 @@ int						what_ratation2a(t_list_cir *tmp_a_next,
 		t_list_cir *tmp_a_previous);
 int						what_ratation2b(t_e *e, t_list_cir *tmp_b_next,
 		t_list_cir *tmp_b_previous);
+t_list_str				*ft_create_racine_str(void);
+t_list_str				*push_back_str(t_list_str *begin_list, char *str);
+void					ft_free_list_str(t_list_str *begin_list);
+t_list_str				*ft_free_maillon_str(t_list_str *maillon1,
+		t_list_str *maillon2);
+void					check_del(t_list_str *l_str);
+void					display_result(t_list_str *l_str);
 
 #endif
