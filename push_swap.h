@@ -29,6 +29,15 @@ typedef	struct			s_list_str
 	struct s_list_str	*previous;
 }						t_list_str;
 
+typedef	struct			s_v
+{
+	t_list_cir			*l_a;
+	t_list_cir			*l_b;
+	t_list_str			*str;
+	int					nb_op;
+	int					triee;
+}						t_v;
+
 typedef struct			s_e
 {
 	t_list_cir			*l_a;
