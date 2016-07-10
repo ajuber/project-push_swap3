@@ -6,7 +6,7 @@
 #    By: ajubert <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/05 14:28:27 by ajubert           #+#    #+#              #
-#    Updated: 2016/06/22 17:54:16 by ajubert          ###   ########.fr        #
+#    Updated: 2016/07/10 15:15:00 by ajubert          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,9 +33,14 @@ SRC_C1=	main.c\
 		tri_aa.c\
 		what_ratation.c\
 		list_str.c\
-		check_del.c\
 		display_result.c\
-		
+		backtrack.c\
+		del_last_op.c\
+		check_result_str.c\
+		check_anul.c\
+		check_not_op.c\
+		do_op.c\
+		liste_triee.c
 
 SRC_C2=	main_checker.c
 

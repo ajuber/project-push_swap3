@@ -6,7 +6,7 @@
 /*   By: ajubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/23 23:26:40 by ajubert           #+#    #+#             */
-/*   Updated: 2016/06/22 18:49:45 by ajubert          ###   ########.fr       */
+/*   Updated: 2016/07/10 15:13:55 by ajubert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,27 +67,27 @@ int			checker_calc(t_e *e)
 	while (get_next_line(0, &line) != 0)
 	{
 		if (ft_strcmp("sa", line) == 0)
-			sa(e);
+			sa(e->l_a);
 		else if (ft_strcmp("sb", line) == 0)
-			sb(e);
+			sb(e->l_b);
 		else if (ft_strcmp("ss", line) == 0)
-			ss(e);
+			ss(e->l_a, e->l_b);
 		else if (ft_strcmp("ra", line) == 0)
-			ra(e);
+			ra(e->l_a);
 		else if (ft_strcmp("rb", line) == 0)
-			rb(e);
+			rb(e->l_b);
 		else if (ft_strcmp("rr", line) == 0)
-			rr(e);
+			rr(e->l_a, e->l_b);
 		else if (ft_strcmp("rra", line) == 0)
-			rra(e);
+			rra(e->l_a);
 		else if (ft_strcmp("rrb", line) == 0)
-			rrb(e);
+			rrb(e->l_b);
 		else if (ft_strcmp("rrr", line) == 0)
-			rrr(e);
+			rrr(e->l_a, e->l_b);
 		else if (ft_strcmp("pa", line) == 0)
-			pa(e);
+			pa(e->l_a, e->l_b);
 		else if (ft_strcmp("pb", line) == 0)
-			pb(e);
+			pb(e->l_a, e->l_b);
 		else
 		{
 			ft_putendl_fd("Error", 2);

@@ -6,7 +6,7 @@
 /*   By: ajubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/23 23:39:30 by ajubert           #+#    #+#             */
-/*   Updated: 2016/04/24 07:26:55 by ajubert          ###   ########.fr       */
+/*   Updated: 2016/07/10 11:07:44 by ajubert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,20 +53,17 @@ t_list_str		*push_back_str(t_list_str *begin_list, char *str)
 	return (begin_list);
 }
 
-t_list_str		*ft_free_maillon_str(t_list_str *maillon1, t_list_str *maillon2)
+void			del_last_maillon(t_list_str *begin)
 {
 	t_list_str *tmp;
 	t_list_str *tmp1;
 
-	tmp = maillon1->previous;
-	tmp1 = maillon2->next;
-	ft_memdel((void **)&maillon1->str);
-	ft_memdel((void **)&maillon1);
-	ft_memdel((void **)&maillon2->str);
-	ft_memdel((void **)&maillon2);
-	tmp->next = tmp1;
-	tmp1->previous = tmp;
-	return (tmp1);
+	tmp = begin->previous;
+	tmp1 = tmp->previous;
+	ft_memdel((void **)&tmp->str);
+	ft_memdel((void **)&tmp);
+	tmp1->next = begin;
+	begin->previous = tmp1;
 }
 
 void			ft_free_list_str(t_list_str *begin_list)

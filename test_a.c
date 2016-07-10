@@ -6,7 +6,7 @@
 /*   By: ajubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 15:15:08 by ajubert           #+#    #+#             */
-/*   Updated: 2016/06/22 18:23:26 by ajubert          ###   ########.fr       */
+/*   Updated: 2016/07/10 15:01:05 by ajubert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	tri_a(t_e *e, int nb_rot, int nb_rot_rev)
 	{
 		while (nb_rot-- > 0)
 		{
-			ra(e);
+			ra(e->l_a);
 			ft_putendl("ra");
 			if_display(e, 1);
 		}
@@ -27,7 +27,7 @@ void	tri_a(t_e *e, int nb_rot, int nb_rot_rev)
 	{
 		while (nb_rot_rev-- > 0)
 		{
-			rra(e);
+			rra(e->l_a);
 			ft_putendl("rra");
 			if_display(e, 1);
 		}

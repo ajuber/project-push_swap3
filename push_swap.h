@@ -6,7 +6,7 @@
 /*   By: ajubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/23 23:16:56 by ajubert           #+#    #+#             */
-/*   Updated: 2016/06/23 15:26:44 by ajubert          ###   ########.fr       */
+/*   Updated: 2016/07/10 14:31:26 by ajubert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef	struct			s_v
 	t_list_str			*str;
 	int					nb_op;
 	int					triee;
+	int					size;
 }						t_v;
 
 typedef struct			s_e
@@ -56,18 +57,18 @@ typedef struct			s_e
 t_list_cir				*ft_create_racine(void);
 t_list_cir				*push_back_list(t_list_cir *begin_list, int nb);
 void					ft_free_list_cir(t_list_cir *begin_list);
-void					pa(t_e *e);
-void					pb(t_e *e);
-void					sa(t_e *e);
-void					sb(t_e *e);
-void					ss(t_e *e);
-void					ra(t_e *e);
-void					rb(t_e *e);
-void					rr(t_e *e);
-void					rra(t_e *e);
-void					rrb(t_e *e);
-void					rrr(t_e *e);
-int						push_swap_calc(t_e *e);
+void					pa(t_list_cir *l_a, t_list_cir *l_b);
+void					pb(t_list_cir *l_a, t_list_cir *l_b);
+void					sa(t_list_cir *l_a);
+void					sb(t_list_cir *l_b);
+void					ss(t_list_cir *l_a, t_list_cir *l_b);
+void					ra(t_list_cir *l_a);
+void					rb(t_list_cir *l_b);
+void					rr(t_list_cir *l_a, t_list_cir *l_b);
+void					rra(t_list_cir *l_a);
+void					rrb(t_list_cir *l_b);
+void					rrr(t_list_cir *l_a, t_list_cir *l_b);
+int						push_swap_calc(t_e *e, t_v *v);
 void					display_list(t_e *e, int n);
 int						test_a(t_e *e);
 int						tri_a_and_b(t_e *e);
@@ -89,9 +90,15 @@ int						what_ratation2b(t_e *e, t_list_cir *tmp_b_next,
 t_list_str				*ft_create_racine_str(void);
 t_list_str				*push_back_str(t_list_str *begin_list, char *str);
 void					ft_free_list_str(t_list_str *begin_list);
-t_list_str				*ft_free_maillon_str(t_list_str *maillon1,
-		t_list_str *maillon2);
 void					check_del(t_list_str *l_str);
 void					display_result(t_list_str *l_str);
+int						liste_triee(t_list_cir *l_a, t_list_cir *l_b);
+void					del_last_maillon(t_list_str *begin);
+int						backtrack(t_v *v, t_list_str ref[10], int nb_op_max);
+void					del_last_op(t_list_cir *l_a, t_list_cir *l_b, char *str);
+int						check_result_str(int *i, t_list_str ref[10], t_v *v);
+int						check_anul(char *ref, char *prev);
+int						check_not_op(t_list_cir *l_a, t_list_cir *l_b, char *str);
+void					do_op(t_list_cir *l_a, t_list_cir *l_b, char *str);
 
 #endif

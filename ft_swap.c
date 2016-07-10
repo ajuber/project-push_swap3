@@ -6,20 +6,20 @@
 /*   By: ajubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/24 02:47:13 by ajubert           #+#    #+#             */
-/*   Updated: 2016/04/24 06:30:06 by ajubert          ###   ########.fr       */
+/*   Updated: 2016/07/10 14:07:02 by ajubert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_e *e)
+void	sa(t_list_cir *l_a)
 {
 	t_list_cir	*tmp_a;
 	int			tmp;
 	int			tmp1;
 
-	tmp_a = e->l_a->next;
-	if (e->l_a != tmp_a && e->l_a != tmp_a->next)
+	tmp_a = l_a->next;
+	if (l_a != tmp_a && l_a != tmp_a->next)
 	{
 		tmp = tmp_a->n;
 		tmp_a = tmp_a->next;
@@ -30,14 +30,14 @@ void	sa(t_e *e)
 	}
 }
 
-void	sb(t_e *e)
+void	sb(t_list_cir *l_b)
 {
 	t_list_cir	*tmp_a;
 	int			tmp;
 	int			tmp1;
 
-	tmp_a = e->l_b->next;
-	if (e->l_b != tmp_a && e->l_b != tmp_a->next)
+	tmp_a = l_b->next;
+	if (l_b != tmp_a && l_b != tmp_a->next)
 	{
 		tmp = tmp_a->n;
 		tmp_a = tmp_a->next;
@@ -48,8 +48,8 @@ void	sb(t_e *e)
 	}
 }
 
-void	ss(t_e *e)
+void	ss(t_list_cir *l_a, t_list_cir *l_b)
 {
-	sa(e);
-	sb(e);
+	sa(l_a);
+	sb(l_b);
 }

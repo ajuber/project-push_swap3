@@ -6,7 +6,7 @@
 /*   By: ajubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/24 05:50:31 by ajubert           #+#    #+#             */
-/*   Updated: 2016/06/22 18:20:39 by ajubert          ###   ########.fr       */
+/*   Updated: 2016/07/10 15:05:08 by ajubert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	tri_aa_else(t_e *e, t_list_cir *tmp_b, t_list_cir *tmp_a_next,
 		{
 			test = 0;
 			rot--;
-			ra(e);
+			ra(e->l_a);
 			ft_putendl("ra");
 			if_display(e, 1);
 		}
@@ -36,7 +36,7 @@ void	tri_aa_else(t_e *e, t_list_cir *tmp_b, t_list_cir *tmp_a_next,
 		{
 			test = 0;
 			rev_rot--;
-			rra(e);
+			rra(e->l_a);
 			ft_putendl("rra");
 			if_display(e, 1);
 		}
@@ -59,7 +59,7 @@ void	tri_aa(t_e *e)
 				(tmp_b->n < tmp_a_next->n && tmp_b < tmp_a_previous
 				&& tmp_a_next->n < tmp_a_previous->n))
 		{
-			pa(e);
+			pa(e->l_a, e->l_b);
 			ft_putendl("pa");
 			e->size_l++;
 			if_display(e, 1);
@@ -83,13 +83,13 @@ void	after_tri_aa(t_e *e)
 	{
 		if (e->rot <= e->rev_rot)
 		{
-			ra(e);
+			ra(e->l_a);
 			ft_putendl("ra");
 			if_display(e, 1);
 		}
 		else
 		{
-			rra(e);
+			rra(e->l_a);
 			ft_putendl("rra");
 			if_display(e, 1);
 		}

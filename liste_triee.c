@@ -1,51 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tri_small_list.c                                   :+:      :+:    :+:   */
+/*   liste_triee.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/11 18:09:36 by ajubert           #+#    #+#             */
-/*   Updated: 2016/07/10 15:00:06 by ajubert          ###   ########.fr       */
+/*   Created: 2016/07/10 09:59:19 by ajubert           #+#    #+#             */
+/*   Updated: 2016/07/10 10:09:53 by ajubert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		test_small_list(t_e *e)
+int		liste_triee(t_list_cir *l_a, t_list_cir *l_b)
 {
-	if (test_a(e))
-		return (1);
-	if (e->size_l == 3)
+	t_list_cir *tmp;
+	t_list_cir *tmp_next;
+
+	tmp = l_b->next;
+	if (tmp != l_b)
+		return (0);
+	tmp = l_a->next;
+	tmp_next = tmp->next;
+	while (tmp_next != l_a && tmp->n < tmp_next->n)
 	{
-		tri_a_and_b(e);
-		return (1);
+		tmp = tmp->next;
+		tmp_next = tmp->next;
 	}
-	if (test_swap_a(e))
+	if (tmp_next == l_a)
 		return (1);
-	if (e->size_l <= 6)
-	{
-		tri_small_list(e);
-		return (1);
-	}
 	return (0);
-}
-
-void	tri_small_list(t_e *e)
-{
-	int		i;
-
-	i = 0;
-	while (i < e->size_l - 3)
-	{
-		pb(e->l_a, e->l_b);
-		i++;
-		ft_putendl("pb");
-		if_display(e, 1);
-	}
-	if (e->size_l == 6)
-		tri_b_and_a(e);
-	e->size_l = 3;
-	tri_aa(e);
-	after_tri_aa(e);
 }
