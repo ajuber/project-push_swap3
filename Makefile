@@ -6,7 +6,7 @@
 #    By: ajubert <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/05 14:28:27 by ajubert           #+#    #+#              #
-#    Updated: 2016/07/10 15:15:00 by ajubert          ###   ########.fr        #
+#    Updated: 2016/07/11 11:29:14 by ajubert          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,8 @@ SRC_C1=	main.c\
 		check_anul.c\
 		check_not_op.c\
 		do_op.c\
-		liste_triee.c
+		liste_triee.c\
+		ft_resolv.c
 
 SRC_C2=	main_checker.c
 

@@ -6,7 +6,7 @@
 /*   By: ajubert <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/23 23:26:40 by ajubert           #+#    #+#             */
-/*   Updated: 2016/07/10 15:27:47 by ajubert          ###   ########.fr       */
+/*   Updated: 2016/07/11 11:27:15 by ajubert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,15 +79,13 @@ int				ft_check_doublon(t_e *e)
 
 void			main_next(t_e *e, t_v *v)
 {
-	v->str = ft_create_racine_str();
 	push_swap_calc(e, v);
 //	check_del(e->l_str);
 	if (e->v)
 		ft_putendl("Operation effectue");
-	display_result(v->str);
+	display_result(v->tab_op, v->size);
 	ft_free_list_cir(e->l_a);
 	ft_free_list_cir(e->l_b);
-	ft_free_list_str(v->str);
 }
 
 int				main(int argc, char **argv)

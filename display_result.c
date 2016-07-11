@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   display_result.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ajubert <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/07/11 11:21:36 by ajubert           #+#    #+#             */
+/*   Updated: 2016/07/11 11:32:59 by ajubert          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void	display_result(t_list_str *l_str)
+void	display_result(t_str *l_str, int size)
 {
-	t_list_str *tmp;
+	int i;
 
-	tmp = l_str->next;
-	while (tmp != l_str)
+	i = 0;
+	while (i < size)
 	{
-		ft_putendl(tmp->str);
-		tmp = tmp->next;
+		ft_putendl(l_str[i].str);
+		i++;
 	}
 }
